@@ -1,0 +1,84 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="User">
+    <xs:annotation>
+      <xs:documentation>To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="name"/>
+        <xs:element type="xs:string" name="NativeLanguage"/>
+        <xs:element name="LanguagePair" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="native"/>
+              <xs:element type="xs:string" name="target"/>
+              <xs:element name="Group" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="name"/>
+                    <xs:element name="Document" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:choice maxOccurs="unbounded" minOccurs="0">
+                          <xs:element type="xs:string" name="title"/>
+                          <xs:element type="xs:string" name="text"/>
+                          <xs:element type="xs:string" name="translation"/>
+                          <xs:element name="Card">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="content" minOccurs="0"/>
+                                <xs:element type="xs:integer" name="index"/>
+                                <xs:element type="xs:string" name="wordAsAppears" minOccurs="0"/>
+                                <xs:element type="xs:string" name="generic" minOccurs="0"/>
+                                <xs:element type="xs:string" name="partOfSpeech" minOccurs="0"/>
+                                <xs:element type="xs:string" name="translationInContext" minOccurs="0"/>
+                                <xs:element type="xs:string" name="otherTranslation" minOccurs="0"/>
+                                <xs:element type="xs:integer" name="startChar"/>
+                                <xs:element type="xs:integer" name="endChar"/>
+                                <xs:element type="xs:integer" name="timesCorrect" minOccurs="0"/>
+                                <xs:element type="xs:integer" name="timesIncorrect" minOccurs="0"/>
+                                <xs:element type="xs:string" name="hint" minOccurs="0"/>
+                                <xs:element type="xs:string" name="cardNote" minOccurs="0"/>
+                              </xs:sequence>
+                              <xs:attribute type="xs:integer" name="ID" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Note">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="content" minOccurs="0"/>
+                                <xs:element type="xs:integer" name="index"/>
+                                <xs:element type="xs:string" name="wordAsAppears" minOccurs="0"/>
+                                <xs:element type="xs:string" name="generic" minOccurs="0"/>
+                                <xs:element type="xs:string" name="partOfSpeech" minOccurs="0"/>
+                                <xs:element type="xs:string" name="translationInContext" minOccurs="0"/>
+                                <xs:element type="xs:string" name="otherTranslation" minOccurs="0"/>
+                                <xs:element type="xs:integer" name="startChar"/>
+                                <xs:element type="xs:integer" name="endChar"/>
+                                <xs:element type="xs:integer" name="timesCorrect" minOccurs="0"/>
+                                <xs:element type="xs:integer" name="timesIncorrect" minOccurs="0"/>
+                                <xs:element type="xs:string" name="hint" minOccurs="0"/>
+                                <xs:element type="xs:string" name="cardNote" minOccurs="0"/>
+                              </xs:sequence>
+                              <xs:attribute type="xs:integer" name="ID" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:choice>
+                        <xs:attribute type="xs:integer" name="ID" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:integer" name="ID" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:integer" name="ID" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:integer" name="ID"/>
+      <xs:attribute type="xs:integer" name="count"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

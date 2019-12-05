@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Components.TextAreaController">
+   <children>
+      <HTMLEditor fx:id="area" prefHeight="37.0" prefWidth="40.5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#createNewCardEvent" text="New Flashcard" />
+                <MenuItem mnemonicParsing="false" onAction="#newCardWordEvent" text="New Flashcard with Word" />
+                <MenuItem mnemonicParsing="false" onAction="#newCardDefineEvent" text="New Flashcard Translated" />
+                <MenuItem mnemonicParsing="false" onAction="#createNoteEvent" text="New Misc Note" />
+                <MenuItem mnemonicParsing="false" text="New Note with Phrase" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </HTMLEditor>
+   </children>
+</AnchorPane>
